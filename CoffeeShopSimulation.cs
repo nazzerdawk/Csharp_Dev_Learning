@@ -7,7 +7,6 @@
     of a limited set of states: The next implementation of this I would try would be setting up a finite state machine, possibly even with 
     placeholder imaginary methods for triggering automated kitchen actions as if this were the console kiosk interface for a retro-futuristic
     AutoCafe. I could also easily add various customization options, price variations, coupon code simulation.
-    
     The Coffeebilities are Endless!
                                         (Please don't hit me.)
     
@@ -58,10 +57,9 @@ internal class Program
                 Console.ReadKey();
                 Console.WriteLine("Do you have another order? Y/N");
                 UserInput = Console.ReadLine();
+                UserInput = UserInput.ToUpper();
                 switch (UserInput){ //Yes inputs reset the main loop
-                    case "y": ValidSelectionMade = false ; continue; 
                     case "Y": ValidSelectionMade = false ; continue;
-                    case "n": Console.WriteLine("Thank you! Please come again."); break;
                     case "N": Console.WriteLine("Thank you! Please come again."); break;
                     default: Console.WriteLine("Invalid Input, Please Try Again."); break;
                 }
